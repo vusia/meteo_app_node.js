@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: #222;
+    font-family: "Dosis", sans-serif;
+    font-optical-sizing: auto;
+}
+.card {
+    width: 90%;
+    max-width: 400px;
+    background: linear-gradient(135deg, #00feba, #5b548a);
+    color: #fff;
+    margin: 100px auto 0;
+    padding: 40px 35px;
+    text-align: center;
+}
+.search {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-family: "Dosis", sans-serif;
+  font-optical-sizing: auto;
+}
+.search input {
+    border: 0;
+    outline: 0;
+    background: #ebfffc;
+    color: #555;
+    padding: 10px;
+    flex: 1;
+    margin-right: 16px;
+    font-size: 14px;
+}
+.search button {
+    background: #ebfffc;
+    color: #555;
+    padding: 10px;
+    font-size: 14px;
+}
+.search button:hover {
+    background: #00feba;
+} 
+.location {
+    width: 15px;
+}
+.weather {
+    margin-top: 20px;
+}
+.weather p {
+    margin-top: 10px;
+    
+}
+.details {
+    margin-top: 20px;
+    display: flex;
+    width: 100%;
+}
+.details p {
+    margin: 0;
+    font-size: 13px;
+}
+.col {
+    border: 1px solid white;
+    width: 50%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+}

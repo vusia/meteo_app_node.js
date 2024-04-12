@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link href="style.css" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="images/clear.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap" rel="stylesheet">
+    <title>Meteo App</title>
+  </head>
+  <body>
+    <div class="card">
+      <form class="search" action="/weather" method="get" >
+        <input type="text" name="city" placeholder="Nom de ville">
+        <button type="submit">Search</button>
+      </form>
+      <% if (error) { %>
+        <p><%= error %></p>
+      <% } else if (weather) { %>
+        <div class="weather">
+
+          <% if (weather.weather[0].main == "Clear") { %>
+            <img src="images/clear.png">
+          <% } else if (weather.weather[0].main == "Clouds") { %>
+            <img src="images/cloud.png">
+          <% } else if (weather.weather[0].main == "Rain") { %>
+          <img src="images/rain.png">
+          <% } else if (weather.weather[0].main == "Drizzle") { %>
+          <img src="images/drizzle.png">
+          <% } else if (weather.weather[0].main == "Mist" || weather.weather[0].main == "Haze") {%>
+          <img src="images/mist.png">
+          <% } %>
+
+          <h1 class="temp"><%=Math.round(weather.main.temp)%>°C</h1>
+          <p class="desc"><%=weather.weather[0].description%></p>
+          <p class="city"><img class="location" src="images/location.png"> Arrondissement de <%=weather.name%>, <%=weather.sys.country%></p>
+          <div class="details">
+            <div class="col">
+              <img src="images/temperature.png">
+              <div>
+                <p class="feel"><%=Math.round(weather.main.feels_like)%>°C</p>
+                <p>Feels like</p>
+              </div>
+            </div>
+            <div class="col">
+              <img src="images/humidity.png">
+              <div>
+                <p class="hum"><%=weather.main.humidity%>%</p>
+                <p>Humidity</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% } %>
+      
+      
+    </div>
+  
+
+  
+  </body>
+</html>
